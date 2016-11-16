@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">FailSafe</string>
+    <color name="dim_grey">#696969</color>
+    <string name="assg_name_hint"> Assg. Type</string>
+</resources>

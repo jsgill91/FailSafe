@@ -1,0 +1,696 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/add_class_screen">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text=" General Information:"
+            android:id="@+id/genInfo"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="122dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cName"
+            android:layout_marginTop="11dp"
+            android:hint=" Course Name "
+            android:textColorHint="#000000"
+            android:background="#ffffff"
+            android:textColor="#000000"
+            android:layout_below="@+id/genInfo"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="34dp"
+            android:layout_marginStart="34dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cID"
+            android:hint=" Course ID "
+            android:textColorHint="#000000"
+            android:background="#ffffff"
+            android:textColor="#000000"
+            android:layout_below="@+id/cName"
+            android:layout_alignLeft="@+id/cName"
+            android:layout_alignStart="@+id/cName"
+            android:layout_marginTop="11dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text=" Assignment Info:"
+            android:id="@+id/assgInfo"
+            android:layout_marginTop="22dp"
+            android:layout_below="@+id/cID"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+
+        <!-- First Assignment Info -->
+
+        <TextView
+            android:text=" %"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/assg1_name"
+            android:layout_toEndOf="@+id/assg1_weight_box"
+            android:id="@+id/symbol1"
+            android:layout_toRightOf="@+id/assg1_weight_box" />
+
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/assg1_name"
+            android:hint="@string/assg_name_hint"
+            android:textColorHint="#000000"
+            android:background="#ffffff"
+            android:textColor="#000000"
+            android:ems="3"
+            android:layout_below="@+id/weights"
+            android:layout_marginTop="18dp"
+            android:layout_alignStart="@+id/cID"
+            android:layout_toStartOf="@+id/classSubmitBtn"
+            android:layout_alignEnd="@+id/cName" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Weight:"
+            android:id="@+id/weights"
+            android:layout_marginTop="12dp"
+            android:layout_below="@+id/assgInfo"
+            android:layout_centerHorizontal="true" />
+
+        <EditText
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="0"
+            android:textColorHint="#000000"
+            android:background="#ffffff"
+            android:textColor="#000000"
+            android:ems="10"
+            android:id="@+id/assg1_drop_box"
+            android:layout_marginStart="32dp"
+            android:layout_alignBottom="@+id/assg1_weight_box"
+            android:layout_toEndOf="@+id/symbol1" />
+
+        <TextView
+            android:text="No. of Dropped Assignments:"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/dropLabel"
+            android:layout_alignBottom="@+id/weights"
+            android:layout_toEndOf="@+id/weights"
+            android:layout_marginStart="36dp" />
+
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/assg1_weight_box"
+            android:hint="0"
+            android:textColorHint="#000000"
+            android:background="#ffffff"
+            android:textColor="#000000"
+            android:layout_alignBottom="@+id/symbol1"
+            android:layout_alignEnd="@+id/genInfo"
+            android:layout_toEndOf="@+id/assgInfo"
+            android:layout_alignTop="@+id/symbol1" />
+
+
+        <!-- Assignment 2 -->
+
+        <EditText
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/assg2_weight_box"
+            android:hint="0"
+            android:textColorHint="#000000"
+            android:background="#ffffff"
+            android:textColor="#000000"
+            android:layout_alignBaseline="@+id/symbol2"
+            android:layout_alignBottom="@+id/symbol2"
+            android:layout_alignEnd="@+id/genInfo"
+            android:layout_toEndOf="@+id/assgInfo" />
+
+        <TextView
+            android:visibility="gone"
+            android:text=" %"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/assg2_name"
+            android:layout_toEndOf="@+id/assg2_weight_box"
+            android:id="@+id/symbol2"
+            android:layout_toRightOf="@+id/assg2_weight_box" />
+
+
+        <EditText
+            android:visibility="gone"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="0"
+            android:textColorHint="#000000"
+            android:background="#ffffff"
+            android:textColor="#000000"
+            android:ems="10"
+            android:id="@+id/assg2_drop_box"
+            android:layout_marginStart="32dp"
+            android:layout_alignBottom="@+id/assg2_weight_box"
+            android:layout_toEndOf="@+id/symbol2" />
+
+
+        <!-- Buttons -->
+        <Button
+            android:text="New Assignment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/newAssignmentType"
+            android:layout_alignBaseline="@+id/classSubmitBtn"
+            android:layout_alignBottom="@+id/classSubmitBtn"
+            android:layout_toEndOf="@+id/assg1_weight_box"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:id="@+id/classSubmitBtn"
+            android:layout_marginTop="16dp"
+            android:layout_below="@+id/assg1_name"
+            android:layout_alignStart="@+id/cID" />
+
+
+        <!-- Assignment 3 -->
+
+        <EditText
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/assg3_weight_box"
+            android:hint="0"
+            android:textColorHint="#000000"
+            android:background="#ffffff"
+            android:textColor="#000000"
+            android:layout_alignBaseline="@+id/symbol3"
+            android:layout_alignBottom="@+id/symbol3"
+            android:layout_alignEnd="@+id/genInfo"
+            android:layout_toEndOf="@+id/assgInfo" />
+
+        <TextView
+            android:visibility="gone"
+            android:text=" %"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/assg3_name"
+            android:layout_toEndOf="@+id/assg3_weight_box"
+            android:id="@+id/symbol3"
+            android:layout_toRightOf="@+id/assg3_weight_box" />
+
+
+        <EditText
+            android:visibility="gone"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="0"
+            android:textColorHint="#000000"
+            android:background="#ffffff"
+            android:textColor="#000000"
+            android:ems="10"
+            android:id="@+id/assg3_drop_box"
+            android:layout_marginStart="32dp"
+            android:layout_alignBottom="@+id/assg3_weight_box"
+            android:layout_toEndOf="@+id/symbol3" />
+
+        <EditText
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/assg3_name"
+            android:hint="@string/assg_name_hint"
+            android:textColorHint="#000000"
+            android:background="#ffffff"
+            android:textColor="#000000"
+            android:ems="3"
+            android:layout_below="@+id/assg2_name"
+            android:layout_alignStart="@+id/assg1_name"
+            android:layout_marginTop="16dp"
+            android:layout_alignEnd="@+id/assg2_name" />
+
+        <!-- Assignment 4 -->
+
+        <EditText
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/assg4_weight_box"
+            android:hint="0"
+            android:textColorHint="#000000"
+            android:background="#ffffff"
+            android:textColor="#000000"
+            android:layout_alignBaseline="@+id/symbol4"
+            android:layout_alignBottom="@+id/symbol4"
+            android:layout_alignEnd="@+id/genInfo"
+            android:layout_toEndOf="@+id/assgInfo" />
+
+        <TextView
+            android:visibility="gone"
+            android:text=" %"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/assg4_name"
+            android:layout_toEndOf="@+id/assg4_weight_box"
+            android:id="@+id/symbol4" />
+
+
+        <EditText
+            android:visibility="gone"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="0"
+            android:textColorHint="#000000"
+            android:background="#ffffff"
+            android:textColor="#000000"
+            android:ems="10"
+            android:id="@+id/assg4_drop_box"
+            android:layout_marginStart="32dp"
+            android:layout_alignBottom="@+id/assg4_weight_box"
+            android:layout_toEndOf="@+id/symbol4" />
+
+        <EditText
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/assg4_name"
+            android:hint="@string/assg_name_hint"
+            android:textColorHint="#000000"
+            android:background="#ffffff"
+            android:textColor="#000000"
+            android:ems="3"
+            android:layout_below="@+id/assg3_name"
+            android:layout_alignStart="@+id/assg1_name"
+            android:layout_marginTop="16dp"
+            android:layout_alignEnd="@+id/assg1_name" />
+
+        <!-- Assignment 5 -->
+
+        <EditText
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/assg5_weight_box"
+            android:hint="0"
+            android:textColorHint="#000000"
+            android:background="#ffffff"
+            android:textColor="#000000"
+            android:layout_alignBaseline="@+id/symbol5"
+            android:layout_alignBottom="@+id/symbol5"
+            android:layout_alignEnd="@+id/genInfo"
+            android:layout_toEndOf="@+id/assgInfo" />
+
+        <TextView
+            android:visibility="gone"
+            android:text=" %"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/assg5_name"
+            android:layout_toEndOf="@+id/assg5_weight_box"
+            android:id="@+id/symbol5"
+            android:layout_toRightOf="@+id/assg5_weight_box" />
+
+
+        <EditText
+            android:visibility="gone"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="0"
+            android:textColorHint="#000000"
+            android:background="#ffffff"
+            android:textColor="#000000"
+            android:ems="10"
+            android:id="@+id/assg5_drop_box"
+            android:layout_marginStart="32dp"
+            android:layout_alignBottom="@+id/assg5_weight_box"
+            android:layout_toEndOf="@+id/symbol5" />
+
+        <EditText
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/assg5_name"
+            android:hint="@string/assg_name_hint"
+            android:textColorHint="#000000"
+            android:background="#ffffff"
+            android:textColor="#000000"
+            android:ems="3"
+            android:layout_below="@+id/assg4_name"
+            android:layout_alignStart="@+id/assg1_name"
+            android:layout_marginTop="16dp"
+            android:layout_alignEnd="@+id/assg1_name" />
+
+        <!-- Assignment 6 -->
+
+        <EditText
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/assg6_weight_box"
+            android:hint="0"
+            android:textColorHint="#000000"
+            android:background="#ffffff"
+            android:textColor="#000000"
+            android:layout_alignBaseline="@+id/symbol6"
+            android:layout_alignBottom="@+id/symbol6"
+            android:layout_alignEnd="@+id/genInfo"
+            android:layout_toEndOf="@+id/assgInfo" />
+
+        <TextView
+            android:visibility="gone"
+            android:text=" %"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/assg6_name"
+            android:layout_toEndOf="@+id/assg6_weight_box"
+            android:id="@+id/symbol6"
+            android:layout_toRightOf="@+id/assg6_weight_box" />
+
+
+        <EditText
+            android:visibility="gone"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="0"
+            android:textColorHint="#000000"
+            android:background="#ffffff"
+            android:textColor="#000000"
+            android:ems="10"
+            android:id="@+id/assg6_drop_box"
+            android:layout_marginStart="32dp"
+            android:layout_alignBottom="@+id/assg6_weight_box"
+            android:layout_toEndOf="@+id/symbol6" />
+
+        <EditText
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/assg6_name"
+            android:hint="@string/assg_name_hint"
+            android:textColorHint="#000000"
+            android:background="#ffffff"
+            android:textColor="#000000"
+            android:ems="3"
+            android:layout_below="@+id/assg5_name"
+            android:layout_alignStart="@+id/assg1_name"
+            android:layout_marginTop="16dp"
+            android:layout_alignEnd="@+id/assg1_name" />
+
+        <!-- Assignment 7 -->
+
+        <EditText
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/assg7_weight_box"
+            android:hint="0"
+            android:textColorHint="#000000"
+            android:background="#ffffff"
+            android:textColor="#000000"
+            android:layout_alignBaseline="@+id/symbol7"
+            android:layout_alignBottom="@+id/symbol7"
+            android:layout_alignEnd="@+id/genInfo"
+            android:layout_toEndOf="@+id/assgInfo" />
+
+        <TextView
+            android:visibility="gone"
+            android:text=" %"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/assg7_name"
+            android:layout_toEndOf="@+id/assg7_weight_box"
+            android:id="@+id/symbol7"
+            android:layout_toRightOf="@+id/assg7_weight_box" />
+
+
+        <EditText
+            android:visibility="gone"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="0"
+            android:textColorHint="#000000"
+            android:background="#ffffff"
+            android:textColor="#000000"
+            android:ems="10"
+            android:id="@+id/assg7_drop_box"
+            android:layout_marginStart="32dp"
+            android:layout_alignBottom="@+id/assg7_weight_box"
+            android:layout_toEndOf="@+id/symbol7" />
+
+        <EditText
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/assg7_name"
+            android:hint="@string/assg_name_hint"
+            android:textColorHint="#000000"
+            android:background="#ffffff"
+            android:textColor="#000000"
+            android:ems="3"
+            android:layout_below="@+id/assg6_name"
+            android:layout_alignStart="@+id/assg1_name"
+            android:layout_marginTop="16dp"
+            android:layout_alignEnd="@+id/assg1_name" />
+
+        <!-- Assignment 8 -->
+
+        <EditText
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/assg8_weight_box"
+            android:hint="0"
+            android:textColorHint="#000000"
+            android:background="#ffffff"
+            android:textColor="#000000"
+            android:layout_alignBaseline="@+id/symbol8"
+            android:layout_alignBottom="@+id/symbol8"
+            android:layout_alignEnd="@+id/genInfo"
+            android:layout_toEndOf="@+id/assgInfo" />
+
+        <TextView
+            android:visibility="gone"
+            android:text=" %"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/assg8_name"
+            android:layout_toEndOf="@+id/assg8_weight_box"
+            android:id="@+id/symbol8"
+            android:layout_toRightOf="@+id/assg8_weight_box" />
+
+
+        <EditText
+            android:visibility="gone"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="0"
+            android:textColorHint="#000000"
+            android:background="#ffffff"
+            android:textColor="#000000"
+            android:ems="10"
+            android:id="@+id/assg8_drop_box"
+            android:layout_marginStart="32dp"
+            android:layout_alignBottom="@+id/assg8_weight_box"
+            android:layout_toEndOf="@+id/symbol8" />
+
+        <EditText
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/assg8_name"
+            android:hint="@string/assg_name_hint"
+            android:textColorHint="#000000"
+            android:background="#ffffff"
+            android:textColor="#000000"
+            android:ems="3"
+            android:layout_below="@+id/assg7_name"
+            android:layout_alignStart="@+id/assg1_name"
+            android:layout_marginTop="16dp"
+            android:layout_alignEnd="@+id/assg1_name" />
+
+        <!-- Assignment 9 -->
+
+        <EditText
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/assg9_weight_box"
+            android:hint="0"
+            android:textColorHint="#000000"
+            android:background="#ffffff"
+            android:textColor="#000000"
+            android:layout_alignBaseline="@+id/symbol9"
+            android:layout_alignBottom="@+id/symbol9"
+            android:layout_alignEnd="@+id/genInfo"
+            android:layout_toEndOf="@+id/assgInfo" />
+
+        <TextView
+            android:visibility="gone"
+            android:text=" %"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/assg9_name"
+            android:layout_toEndOf="@+id/assg9_weight_box"
+            android:id="@+id/symbol9"
+            android:layout_toRightOf="@+id/assg9_weight_box" />
+
+
+        <EditText
+            android:visibility="gone"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="0"
+            android:textColorHint="#000000"
+            android:background="#ffffff"
+            android:textColor="#000000"
+            android:ems="10"
+            android:id="@+id/assg9_drop_box"
+            android:layout_marginStart="32dp"
+            android:layout_alignBottom="@+id/assg9_weight_box"
+            android:layout_toEndOf="@+id/symbol9" />
+
+        <EditText
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/assg9_name"
+            android:hint="@string/assg_name_hint"
+            android:textColorHint="#000000"
+            android:background="#ffffff"
+            android:textColor="#000000"
+            android:ems="3"
+            android:layout_below="@+id/assg8_name"
+            android:layout_alignStart="@+id/assg1_name"
+            android:layout_marginTop="16dp"
+            android:layout_alignEnd="@+id/assg1_name" />
+
+        <!-- Assignment 10 -->
+
+        <EditText
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/assg10_weight_box"
+            android:hint="0"
+            android:textColorHint="#000000"
+            android:background="#ffffff"
+            android:textColor="#000000"
+            android:layout_alignBaseline="@+id/symbol10"
+            android:layout_alignBottom="@+id/symbol10"
+            android:layout_alignEnd="@+id/genInfo"
+            android:layout_toEndOf="@+id/assgInfo" />
+
+        <TextView
+            android:visibility="gone"
+            android:text=" %"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/assg10_name"
+            android:layout_toEndOf="@+id/assg10_weight_box"
+            android:id="@+id/symbol10"
+            android:layout_toRightOf="@+id/assg10_weight_box" />
+
+
+        <EditText
+            android:visibility="gone"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="0"
+            android:textColorHint="#000000"
+            android:background="#ffffff"
+            android:textColor="#000000"
+            android:ems="10"
+            android:id="@+id/assg10_drop_box"
+            android:layout_marginStart="32dp"
+            android:layout_alignBottom="@+id/assg10_weight_box"
+            android:layout_toEndOf="@+id/symbol10" />
+
+        <EditText
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/assg10_name"
+            android:hint="@string/assg_name_hint"
+            android:textColorHint="#000000"
+            android:background="#ffffff"
+            android:textColor="#000000"
+            android:ems="3"
+            android:layout_below="@+id/assg9_name"
+            android:layout_alignStart="@+id/assg1_name"
+            android:layout_marginTop="16dp"
+            android:layout_alignEnd="@+id/assg1_name" />
+
+        <EditText
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/assg2_name"
+            android:hint="@string/assg_name_hint"
+            android:textColorHint="#000000"
+            android:background="#ffffff"
+            android:textColor="#000000"
+            android:ems="3"
+            android:layout_alignTop="@+id/classSubmitBtn"
+            android:layout_alignStart="@+id/classSubmitBtn"
+            android:layout_alignEnd="@+id/assg1_name" />
+
+
+    </RelativeLayout>
+</ScrollView>
+
+
