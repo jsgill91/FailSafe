@@ -134,19 +134,22 @@ public class Gradebook extends SQLiteOpenHelper implements Serializable{
         idGenerator++;
     }
 
-    public int add_grade(int id, String name, String due_date, String type, String description, int grade){
+    //method modified so that a user enters an assignment at the same time they enter the grade;
+    // can be change later. For now, instead of getting rid of the unnecessary columns, "" is passed in for their values
+    //essentially combines add_assignment and add_grade
+    public void add_grade(String name, String type, double grade){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(ASSG_ID, id);
+        values.put(ASSG_ID, idGenerator);
         values.put(ASSG_NAME, name);
-        values.put(ASSG_DUE_DATE, due_date);
+        values.put(ASSG_DUE_DATE, "");
         values.put(ASSG_TYPE, type);
-        values.put(ASSG_DESCRIPTION, description);
+        values.put(ASSG_DESCRIPTION, "");
         values.put(String.valueOf(ASSG_GRADE), grade);
 
-        return db.update(TABLE_ASSIGNMENTS, values, ASSG_ID + " = ?",
-                new String[]{String.valueOf(id)});
-
+        db.insert(TABLE_ASSIGNMENTS,null,values);
+        db.close();
+        idGenerator++;
     }
 
     public ArrayList<String> get_types(){
