@@ -47,6 +47,20 @@ public class User implements Serializable{
         courseList[num_courses] = newClass;
         num_courses++;
     }
+    public void delete_class(String class_name){
+        int i = 0;
+        while(i <= num_courses && !(courseList[i].getCourseName().equals(class_name))){
+            i++;
+        }
+        for(int j = 0; j < num_courses; j++){
+            courseList[i] = courseList[j];
+            i++;
+        }
+        num_courses--;
+    }
+    public void delete_All(String class_name){
+        courseList = new Gradebook[10];
+    }
 
     public double calculate_average(String class_name){
         int i = 0;
@@ -65,6 +79,14 @@ public class User implements Serializable{
         return courseList[i].get_assignments();
     }
 
+    public void add_grade(String class_name, String name, String assg_type, double grade){
+        int i = 0;
+        while(i <= num_courses && !(courseList[i].getCourseName().equals(class_name))){
+            i++;
+        }
+        courseList[i].add_grade(name,assg_type,grade);
+    }
+
     public ArrayList<String> get_types(String class_name){
         int i = 0;
         while(i <= num_courses && !(courseList[i].getCourseName().equals(class_name))){
@@ -73,12 +95,5 @@ public class User implements Serializable{
         return courseList[i].get_types();
     }
 
-    public void add_grade(String class_name, String name, String type, double grade){
-        int i = 0;
-        while(i <= num_courses && !(courseList[i].getCourseName().equals(class_name))){
-            i++;
-        }
-        courseList[i].add_grade(name, type, grade);
-    }
-
 }
+//

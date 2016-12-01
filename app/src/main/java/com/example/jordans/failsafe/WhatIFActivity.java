@@ -1,7 +1,9 @@
 package com.example.jordans.failsafe;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -87,7 +89,10 @@ public class WhatIfActivity extends AppCompatActivity {
                 - displayed in a dialogue box
          */
         //need a way to get the classname; figure out what it means by static method
-        ArrayList<String> gradeInfo = FS_System.get_assignments("placeholder");
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        String class_name = preferences.getString("courseName","DEFAULT");
+
+        ArrayList<String> gradeInfo = FS_System.get_assignments(class_name);
         ArrayList<String> typeList = new ArrayList<>();
         CheckBox[][] checkboxes = new CheckBox[10][4];
         int type = 0;
