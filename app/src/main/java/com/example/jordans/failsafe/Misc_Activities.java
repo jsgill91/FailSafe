@@ -38,6 +38,8 @@ public class Misc_Activities extends AppCompatActivity{
         // Calculate Average Start
 
         final Button calcBtn = (Button) findViewById(R.id.calc_button);
+        final Button wiBtn = (Button) findViewById(R.id.whatIf_button);
+        final Button addGradeBtn = (Button) findViewById(R.id.addGrade_button);
 
         calcBtn.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -56,8 +58,26 @@ public class Misc_Activities extends AppCompatActivity{
         // Calculate Average End
 
         // What If Start
-
+        wiBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent nextScreen = new Intent(v.getContext(), WhatIfActivity.class);
+                nextScreen.putExtra("FailSafe_System", FS_System);
+                startActivity(nextScreen);
+            }
+        });
         //What If End
+
+        //Add Grade Start
+        addGradeBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent nextScreen = new Intent(v.getContext(), AddGradeActivity.class);
+                nextScreen.putExtra("FailSafe_System", FS_System);
+                startActivity(nextScreen);
+            }
+        });
+        //Add Grade End
 
     }
 

@@ -28,7 +28,6 @@ public class NewUserActivity extends AppCompatActivity {
      * See https://g.co/AppIndexing/AndroidStudio for more information.
      */
     private GoogleApiClient client;
-    Context context = this.getApplicationContext();
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,15 +54,6 @@ public class NewUserActivity extends AppCompatActivity {
 
                 FS_System.set_username(username);
                 FS_System.set_password(password);
-
-                try {
-                    FileOutputStream fos = context.openFileOutput("FS_System", Context.MODE_PRIVATE);
-                    ObjectOutputStream oos = new ObjectOutputStream(fos);
-                    oos.writeObject(FS_System);
-                    oos.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
 
                 Intent nextScreen = new Intent(v.getContext(), LoginScreenActivity.class);
                 nextScreen.putExtra("FailSafe_System", FS_System);

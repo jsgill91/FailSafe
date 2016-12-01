@@ -87,7 +87,7 @@ public class WhatIfActivity extends AppCompatActivity {
                 - displayed in a dialogue box
          */
         //need a way to get the classname; figure out what it means by static method
-        ArrayList<String> gradeInfo = FS_System.get_assignments();
+        ArrayList<String> gradeInfo = FS_System.get_assignments("placeholder");
         ArrayList<String> typeList = new ArrayList<>();
         CheckBox[][] checkboxes = new CheckBox[10][4];
         int type = 0;
