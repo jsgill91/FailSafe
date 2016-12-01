@@ -1,7 +1,9 @@
 package com.example.jordans.failsafe;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -50,7 +52,10 @@ public class AddGradeActivity extends AppCompatActivity {
         final TextView typeView = (TextView) findViewById(R.id.type_list);
         final Button submitBtn = (Button) findViewById(R.id.newGradeBtn);
 
-        final ArrayList<String> types = FS_System.get_types("placeholder");
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        String class_name = preferences.getString("courseName","DEFAULT");
+
+        final ArrayList<String> types = FS_System.get_types(class_name);
 
         String typeList = "(available assignment types: ";
         for(int i = 0; i <= types.size(); i++){

@@ -22,7 +22,7 @@
         android:id="@+id/deleteBtn"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:onclick= "deleteClass"/>
+        android:onClick= "deleteClass"/>
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -33,7 +33,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:onclick = "deleteAll"/>
+        android:onClick = "deleteAll"/>
 
     <ScrollView
         android:layout_width="match_parent"
