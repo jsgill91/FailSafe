@@ -41,4 +41,8 @@ public class FailSafe implements Serializable{
     public ArrayList<String> get_assignments(String class_name){
         return user.get_assignments(class_name);
     }
+
+    public ArrayList<String> get_types(String class_name){
+        return user.get_types(class_name);
+    }
 }
