@@ -181,8 +181,26 @@ public class Gradebook extends SQLiteOpenHelper implements Serializable{
         db.close();
     }
 
-    public void get_assignments(){
+    public ArrayList<String> get_assignments(){
         //what should this return?
+        //an arraylist
+        SQLiteDatabase db = this.getReadableDatabase();
+        ArrayList<String> assignments = new ArrayList<String>();
+        String myQuery;
+
+        myQuery = "SELECT Name, Type, Grade, FROM TABLE_ASSIGNMENTS " +
+                "ORDER BY Type";
+
+        Cursor cursor = db.rawQuery(myQuery,null);
+        if(cursor != null){
+            while(cursor.moveToNext()){
+                //assignments.add(cursor.getString(cursor.getColumnIndex("Name")));
+                assignments.add(cursor.getString(cursor.getColumnIndex("Type")));
+                assignments.add(String.valueOf(cursor.getDouble(cursor.getColumnIndex("Grade"))));
+            }
+        }
+        cursor.close();
+        return assignments;
     }
 
     public double calculate_assignment_average(String assignment){

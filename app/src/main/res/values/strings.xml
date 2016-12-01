@@ -2,4 +2,10 @@
     <string name="app_name">FailSafe</string>
     <color name="dim_grey">#696969</color>
     <string name="assg_name_hint"> Assg. Type</string>
+    <string name="what_if_description">Welcome to the What If calculator.
+    To add a grade to an assignment set, enter the new grade tap the \"Add Grade\" button .
+        To drop a grade, check the box next to the grade you wish
+    to remove. (If this course allows the lowest grade(s) of an assignment set
+    to be dropped, do not worry about dropping them.) When you\'re finished,
+        tap the \"Calculate\" button to see your generated grade.</string>
 </resources>

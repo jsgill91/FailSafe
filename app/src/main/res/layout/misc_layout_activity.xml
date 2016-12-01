@@ -6,9 +6,16 @@
 
 
     <Button
-        android:text="Button"
+        android:text="Calculate Grade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/calc_button"
+        android:layout_weight="1" />
+
+    <Button
+        android:text="What If"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/whatIf_button"
         android:layout_weight="1" />
 </LinearLayout>

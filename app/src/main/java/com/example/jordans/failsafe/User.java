@@ -1,6 +1,7 @@
 package com.example.jordans.failsafe;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  * Created by Autumn on 9/14/2016.
@@ -54,6 +55,14 @@ public class User implements Serializable{
         }
 
         return courseList[i].calculate_average();
+    }
+
+    public ArrayList<String> get_assignments(String class_name){
+        int i = 0;
+        while(i <= num_courses && !(courseList[i].getCourseName().equals(class_name))){
+            i++;
+        }
+        return courseList[i].get_assignments();
     }
 
 }

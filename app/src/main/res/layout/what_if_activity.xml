@@ -6,8 +6,663 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp"
+        android:id="@+id/scrollView2">
 
     </ScrollView>
+
+    <Button
+        android:text="Calculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/wi_submit" />
+
+    <TextView
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:id="@+id/textView"
+        android:text="@string/what_if_description"
+        android:gravity="center"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"/>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_above="@+id/wi_submit"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <CheckBox
+                android:text="Grade 1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/wi_assg1"
+                android:layout_alignStart="@+id/wi_assg1"
+                android:layout_alignLeft="@+id/wi_assg1"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/wi_grade1.1" />
+
+            <CheckBox
+                android:text="Grade 2"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:id="@+id/wi_grade1.2"
+                android:layout_below="@+id/wi_assg1"
+                android:layout_toEndOf="@+id/wi_grade1.1"
+                android:layout_toRightOf="@+id/wi_grade1.1" />
+
+            <CheckBox
+                android:text="Grade 3"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:id="@+id/wi_grade1.3"
+                android:layout_below="@+id/wi_assg1"
+                android:layout_toEndOf="@+id/wi_grade1.2"
+                android:layout_toRightOf="@+id/wi_grade1.2" />
+
+            <CheckBox
+                android:text="Grade 4"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:id="@+id/wi_grade1.4"
+                android:layout_below="@+id/wi_assg1"
+                android:layout_toEndOf="@+id/wi_grade1.3"
+                android:layout_toRightOf="@+id/wi_grade1.3"/>
+
+            <CheckBox
+                android:text="Grade 5"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:id="@+id/wi_grade1.5"
+                android:layout_below="@+id/wi_assg1"
+                android:layout_toEndOf="@+id/wi_grade1.4"
+                android:layout_toRightOf="@+id/wi_grade1.4" />
+
+            <CheckBox
+                android:text="Grade 6"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:id="@+id/wi_grade1.6"
+                android:layout_below="@+id/wi_assg1"
+                android:layout_toEndOf="@+id/wi_grade1.5"
+                android:layout_toRightOf="@+id/wi_grade1.5" />
+
+            <CheckBox
+                android:text="Grade 7"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:id="@+id/wi_grade1.7"
+                android:layout_below="@+id/wi_assg1"
+                android:layout_toEndOf="@+id/wi_grade1.6"
+                android:layout_toRightOf="@+id/wi_grade1.6" />
+
+            <CheckBox
+                android:text="Grade 8"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:id="@+id/wi_grade1.8"
+                android:layout_below="@+id/wi_assg1"
+                android:layout_toEndOf="@+id/wi_grade1.7"
+                android:layout_toRightOf="@+id/wi_grade1.7" />
+
+            <CheckBox
+                android:text="Grade 9"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:id="@+id/wi_grade1.9"
+                android:layout_below="@+id/wi_assg1"
+                android:layout_toEndOf="@+id/wi_grade1.8"
+                android:layout_toRightOf="@+id/wi_grade1.8" />
+
+            <CheckBox
+                android:text="Grade 10"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:id="@+id/wi_grade1.10"
+                android:layout_below="@+id/wi_assg1"
+                android:layout_toEndOf="@+id/wi_grade1.9"
+                android:layout_toRightOf="@+id/wi_grade1.9"/>
+
+
+            <CheckBox
+                android:text="Grade 1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/wi_assg2"
+                android:layout_alignStart="@+id/wi_assg1"
+                android:layout_alignLeft="@+id/wi_assg1"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/wi_grade2.1" />
+
+            <CheckBox
+                android:text="Grade 2"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:id="@+id/wi_grade2.2"
+                android:layout_below="@+id/wi_assg2"
+                android:layout_toEndOf="@+id/wi_grade2.1"
+                android:layout_toRightOf="@+id/wi_grade2.1" />
+
+            <CheckBox
+                android:text="Grade 3"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:id="@+id/wi_grade2.3"
+                android:layout_below="@+id/wi_assg2"
+                android:layout_toEndOf="@+id/wi_grade2.2"
+                android:layout_toRightOf="@+id/wi_grade2.2" />
+
+            <CheckBox
+                android:text="Grade 4"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:id="@+id/wi_grade2.4"
+                android:layout_below="@+id/wi_assg2"
+                android:layout_toEndOf="@+id/wi_grade2.3"
+                android:layout_toRightOf="@+id/wi_grade2.3" />
+
+            <CheckBox
+                android:text="Grade 5"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:id="@+id/wi_grade2.5"
+                android:layout_below="@+id/wi_assg2"
+                android:layout_toEndOf="@+id/wi_grade2.4"
+                android:layout_toRightOf="@+id/wi_grade2.4" />
+
+            <CheckBox
+                android:text="Grade 6"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:id="@+id/wi_grade2.6"
+                android:layout_below="@+id/wi_assg2"
+                android:layout_toEndOf="@+id/wi_grade2.5"
+                android:layout_toRightOf="@+id/wi_grade2.5" />
+
+            <CheckBox
+                android:text="Grade 7"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:id="@+id/wi_grade2.7"
+                android:layout_below="@+id/wi_assg2"
+                android:layout_toEndOf="@+id/wi_grade2.6"
+                android:layout_toRightOf="@+id/wi_grade2.6"/>
+
+            <CheckBox
+                android:text="Grade 8"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:id="@+id/wi_grade2.8"
+                android:layout_below="@+id/wi_assg2"
+                android:layout_toEndOf="@+id/wi_grade2.7"
+                android:layout_toRightOf="@+id/wi_grade2.7" />
+
+            <CheckBox
+                android:text="Grade 9"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:id="@+id/wi_grade2.9"
+                android:layout_below="@+id/wi_assg2"
+                android:layout_toEndOf="@+id/wi_grade2.8"
+                android:layout_toRightOf="@+id/wi_grade2.8" />
+
+            <CheckBox
+                android:text="Grade 10"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:id="@+id/wi_grade2.10"
+                android:layout_below="@+id/wi_assg2"
+                android:layout_toEndOf="@+id/wi_grade2.9"
+                android:layout_toRightOf="@+id/wi_grade2.9" />
+
+            <TextView
+                android:text="Assignment 3"
+                android:layout_width="250dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/wi_assg3"
+                android:layout_below="@+id/a2_add_grade"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true" />
+
+            <Button
+                android:text="Add Grade"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:id="@+id/a3_add_grade"
+                android:layout_below="@+id/wi_grade3.1"
+                android:layout_toEndOf="@+id/wi_grade3.1"
+                android:layout_toRightOf="@+id/wi_grade3.1"/>
+
+            <EditText
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:inputType="textPersonName"
+                android:hint="0"
+                android:textColorHint="#000000"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:background="#ffffff"
+                android:ems="10"
+                android:id="@+id/assg3_new_grade"
+                android:layout_alignBaseline="@+id/a3_add_grade"
+                android:layout_alignBottom="@+id/a3_add_grade"
+                android:layout_alignStart="@+id/assg2_new_grade"
+                android:layout_alignLeft="@+id/assg2_new_grade" />
+
+            <CheckBox
+                android:text="Grade 1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/wi_assg3"
+                android:layout_alignStart="@+id/wi_assg1"
+                android:layout_alignLeft="@+id/wi_assg1"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/wi_grade3.1" />
+
+            <CheckBox
+                android:text="Grade 2"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:id="@+id/wi_grade3.2"
+                android:layout_below="@+id/wi_assg3"
+                android:layout_toEndOf="@+id/wi_grade3.1"
+                android:layout_toRightOf="@+id/wi_grade3.1" />
+
+            <CheckBox
+                android:text="Grade 3"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:id="@+id/wi_grade3.3"
+                android:layout_below="@+id/wi_assg3"
+                android:layout_toEndOf="@+id/wi_grade3.2"
+                android:layout_toRightOf="@+id/wi_grade3.2"/>
+
+            <CheckBox
+                android:text="Grade 4"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:id="@+id/wi_grade3.4"
+                android:layout_below="@+id/wi_assg3"
+                android:layout_toEndOf="@+id/wi_grade3.3"
+                android:layout_toRightOf="@+id/wi_grade3.3" />
+
+            <CheckBox
+                android:text="Grade 5"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:id="@+id/wi_grade3.5"
+                android:layout_below="@+id/wi_assg3"
+                android:layout_toEndOf="@+id/wi_grade3.4"
+                android:layout_toRightOf="@+id/wi_grade3.4"/>
+
+            <CheckBox
+                android:text="Grade 6"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:id="@+id/wi_grade3.6"
+                android:layout_below="@+id/wi_assg3"
+                android:layout_toEndOf="@+id/wi_grade3.5"
+                android:layout_toRightOf="@+id/wi_grade3.5"/>
+
+            <CheckBox
+                android:text="Grade 7"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:id="@+id/wi_grade3.7"
+                android:layout_below="@+id/wi_assg3"
+                android:layout_toEndOf="@+id/wi_grade3.6"
+                android:layout_toRightOf="@+id/wi_grade3.6" />
+
+            <CheckBox
+                android:text="Grade 8"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:id="@+id/wi_grade3.8"
+                android:layout_below="@+id/wi_assg3"
+                android:layout_toEndOf="@+id/wi_grade3.7"
+                android:layout_toRightOf="@+id/wi_grade3.7" />
+
+            <CheckBox
+                android:text="Grade 9"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:id="@+id/wi_grade3.9"
+                android:layout_below="@+id/wi_assg3"
+                android:layout_toEndOf="@+id/wi_grade3.8"
+                android:layout_toRightOf="@+id/wi_grade3.8"/>
+
+            <CheckBox
+                android:text="Grade 10"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:id="@+id/wi_grade3.10"
+                android:layout_below="@+id/wi_assg3"
+                android:layout_toEndOf="@+id/wi_grade3.9"
+                android:layout_toRightOf="@+id/wi_grade3.9"/>
+
+            <TextView
+                android:text="Assignment 4"
+                android:layout_width="250dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/wi_assg4"
+                android:layout_below="@+id/a3_add_grade"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="@+id/wi_assg1"/>
+
+            <Button
+                android:text="Add Grade"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:id="@+id/a4_add_grade"
+                android:layout_below="@+id/wi_grade4.1"
+                android:layout_toEndOf="@+id/wi_grade4.1"
+                android:layout_toRightOf="@+id/wi_grade4.1"/>
+
+            <EditText
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:inputType="textPersonName"
+                android:hint="0"
+                android:textColorHint="#000000"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:background="#ffffff"
+                android:ems="10"
+                android:id="@+id/assg4_new_grade"
+                android:layout_alignBaseline="@+id/a4_add_grade"
+                android:layout_alignBottom="@+id/a4_add_grade"
+                android:layout_alignStart="@+id/assg3_new_grade"
+                android:layout_alignLeft="@+id/assg3_new_grade"/>
+
+            <CheckBox
+                android:text="Grade 1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/wi_assg4"
+                android:layout_alignStart="@+id/wi_assg1"
+                android:layout_alignLeft="@+id/wi_assg1"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/wi_grade4.1" />
+
+            <CheckBox
+                android:text="Grade 2"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:id="@+id/wi_grade4.2"
+                android:layout_below="@+id/wi_assg4"
+                android:layout_toEndOf="@+id/wi_grade4.1"
+                android:layout_toRightOf="@+id/wi_grade4.1" />
+
+            <CheckBox
+                android:text="Grade 3"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:id="@+id/wi_grade4.3"
+                android:layout_below="@+id/wi_assg4"
+                android:layout_toEndOf="@+id/wi_grade4.2"
+                android:layout_toRightOf="@+id/wi_grade4.2"/>
+
+            <CheckBox
+                android:text="Grade 4"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:id="@+id/wi_grade4.4"
+                android:layout_below="@+id/wi_assg4"
+                android:layout_toEndOf="@+id/wi_grade4.3"
+                android:layout_toRightOf="@+id/wi_grade4.3" />
+
+            <CheckBox
+                android:text="Grade 5"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:id="@+id/wi_grade4.5"
+                android:layout_below="@+id/wi_assg4"
+                android:layout_toEndOf="@+id/wi_grade4.4"
+                android:layout_toRightOf="@+id/wi_grade4.4"/>
+
+            <CheckBox
+                android:text="Grade 6"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:id="@+id/wi_grade4.6"
+                android:layout_below="@+id/wi_assg4"
+                android:layout_toEndOf="@+id/wi_grade4.5"
+                android:layout_toRightOf="@+id/wi_grade4.5"/>
+
+            <CheckBox
+                android:text="Grade 7"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:id="@+id/wi_grade4.7"
+                android:layout_below="@+id/wi_assg4"
+                android:layout_toEndOf="@+id/wi_grade4.6"
+                android:layout_toRightOf="@+id/wi_grade4.6"/>
+
+            <CheckBox
+                android:text="Grade 8"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:id="@+id/wi_grade4.8"
+                android:layout_below="@+id/wi_assg4"
+                android:layout_toEndOf="@+id/wi_grade4.7"
+                android:layout_toRightOf="@+id/wi_grade4.7"/>
+
+            <CheckBox
+                android:text="Grade 9"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:id="@+id/wi_grade4.9"
+                android:layout_below="@+id/wi_assg4"
+                android:layout_toEndOf="@+id/wi_grade4.8"
+                android:layout_toRightOf="@+id/wi_grade4.8"/>
+
+            <CheckBox
+                android:text="Grade 10"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:id="@+id/wi_grade4.10"
+                android:layout_below="@+id/wi_assg4"
+                android:layout_toEndOf="@+id/wi_grade4.9"
+                android:layout_toRightOf="@+id/wi_grade4.9"/>
+
+            <TextView
+                android:text="Assignment 1"
+                android:layout_width="250dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/wi_assg1"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"/>
+
+            <EditText
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:inputType="textPersonName"
+                android:hint="0"
+                android:textColorHint="#000000"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:background="#ffffff"
+                android:ems="10"
+                android:id="@+id/assg1_new_grade"
+                android:layout_alignBaseline="@+id/a1_add_grade"
+                android:layout_alignBottom="@+id/a1_add_grade"
+                android:layout_alignStart="@+id/wi_grade1.1"
+                android:layout_alignLeft="@+id/wi_grade1.1"
+                android:layout_marginStart="11dp"
+                android:layout_marginLeft="11dp" />
+
+            <Button
+                android:text="Add Grade"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:id="@+id/a2_add_grade"
+                android:layout_below="@+id/wi_grade2.1"
+                android:layout_toEndOf="@+id/wi_grade2.1"
+                android:layout_toRightOf="@+id/wi_grade2.1"/>
+
+            <EditText
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:inputType="textPersonName"
+                android:hint="0"
+                android:textColorHint="#000000"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:background="#ffffff"
+                android:ems="10"
+                android:id="@+id/assg2_new_grade"
+                android:layout_alignBaseline="@+id/a2_add_grade"
+                android:layout_alignBottom="@+id/a2_add_grade"
+                android:layout_alignStart="@+id/assg1_new_grade"
+                android:layout_alignLeft="@+id/assg1_new_grade"/>
+
+            <TextView
+                android:text="Assignment 2"
+                android:layout_width="250dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/wi_assg2"
+                android:layout_below="@+id/a1_add_grade"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"/>
+
+            <Button
+                android:text="Add Grade"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:id="@+id/a1_add_grade"
+                android:layout_below="@+id/wi_grade1.1"
+                android:layout_toEndOf="@+id/wi_grade1.1"
+                android:layout_toRightOf="@+id/wi_grade1.1" />
+
+        </RelativeLayout>
+
+    </HorizontalScrollView>
 
 </RelativeLayout>

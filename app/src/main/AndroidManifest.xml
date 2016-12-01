@@ -20,6 +20,8 @@
         <activity android:name=".MainScreenActivity"/>
         <activity android:name=".AddClassActivity"
             android:windowSoftInputMode="adjustPan"/>
+        <activity android:name=".WhatIfActivity"
+            android:windowSoftInputMode="adjustPan"/>
 
     </application>
 
