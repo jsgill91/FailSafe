@@ -37,7 +37,6 @@ public class MainScreenActivity extends AppCompatActivity {
         if (bundle != null) {
             FS_System = (FailSafe) bundle.getSerializable("FailSafe_System");
         }
-
         final Button addBtn = (Button) findViewById(R.id.addClassBtn);
         final Button classButton1 = (Button) findViewById(R.id.classButton1);
         final Button classButton2 = (Button) findViewById(R.id.classButton2);

@@ -22,6 +22,11 @@
         <activity
             android:name=".AddClassActivity"
             android:windowSoftInputMode="adjustPan"/>
+
+        <activity
+            android:name=".WhatIfActivity"
+            android:label="WhatIfActivity">
+        </activity>
         <!--
      ATTENTION: This was auto-generated to add Google Play services to your project for
      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -34,6 +39,47 @@
             android:name=".ClassPage1"
             android:label="@string/title_activity_class_page1">
         </activity>
+
+        <activity
+            android:name=".ClassPage2"
+            android:label="ClassPage2">
+        </activity>
+
+        <activity
+            android:name=".ClassPage3"
+            android:label="ClassPage3">
+        </activity>
+
+        <activity
+            android:name=".ClassPage4"
+            android:label="ClassPage4">
+        </activity>
+
+        <activity
+            android:name=".ClassPage5"
+            android:label="ClassPage5">
+        </activity>
+
+        <activity
+            android:name=".ClassPage6"
+            android:label="ClassPage6">
+        </activity>
+
+        <activity
+            android:name=".ClassPage7"
+            android:label="ClassPage7">
+        </activity>
+
+        <activity
+            android:name=".ClassPage8"
+            android:label="ClassPage8">
+        </activity>
+
+        <activity
+            android:name=".ClassPage9"
+            android:label="ClassPage9">
+        </activity>
+
     </application>
 
 </manifest>
