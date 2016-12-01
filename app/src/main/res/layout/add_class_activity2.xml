@@ -768,7 +768,8 @@
             android:layout_alignLeft="@+id/assg1_name"
             android:layout_marginTop="16dp"
             android:layout_alignEnd="@+id/assg1_name"
-            android:layout_alignRight="@+id/assg1_name"/>
+            android:layout_alignRight="@+id/assg1_name"
+            />
 
 
 
