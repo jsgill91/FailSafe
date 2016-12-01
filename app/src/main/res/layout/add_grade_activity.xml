@@ -1,6 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/home_screen">
 
-</LinearLayout>
+    <TextView
+        android:text="Assignment Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:layout_marginTop="90dp"
+        android:id="@+id/name_title"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint=" Enter Name"
+        android:textColorHint="#000000"
+        android:textColor="#000000"
+        android:background="#ffffff"
+        android:ems="10"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:id="@+id/assg_name"
+        android:layout_below="@+id/name_title"
+        android:layout_alignLeft="@+id/name_title"
+        android:layout_alignStart="@+id/name_title"
+        android:layout_marginTop="14dp" />
+
+    <TextView
+        android:text="Assignment Type:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:layout_marginTop="28dp"
+        android:id="@+id/type_title"
+        android:layout_below="@+id/assg_name"
+        android:layout_alignLeft="@+id/name_title"
+        android:layout_alignStart="@+id/name_title" />
+
+    <TextView
+        android:text="Assignment Grade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:layout_marginTop="28dp"
+        android:id="@+id/grade_title"
+        android:layout_below="@+id/type_input"
+        android:layout_alignLeft="@+id/name_title"
+        android:layout_alignStart="@+id/name_title" />
+
+    <EditText
+        android:layout_width="35dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint=" 0"
+        android:textColorHint="#000000"
+        android:textColor="#000000"
+        android:background="#ffffff"
+        android:ems="10"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:id="@+id/assg_grade"
+        android:layout_below="@+id/grade_title"
+        android:layout_alignLeft="@+id/grade_title"
+        android:layout_alignStart="@+id/grade_title"
+        android:layout_marginTop="14dp" />
+
+    <TextView
+        android:text="%"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:id="@+id/percent"
+        android:layout_alignBaseline="@+id/assg_grade"
+        android:layout_alignBottom="@+id/assg_grade"
+        android:layout_toRightOf="@+id/assg_grade"
+        android:layout_toEndOf="@+id/assg_grade"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp" />
+
+    <Button
+        android:text="Submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="13dp"
+        android:id="@+id/newGradeBtn" />
+
+    <TextView
+        android:text="(available assignment types: )"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:layout_below="@+id/type_title"
+        android:layout_alignLeft="@+id/type_input"
+        android:layout_alignStart="@+id/type_input"
+        android:layout_marginTop="12dp"
+        android:id="@+id/type_list" />
+
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:hint=" Enter Type"
+        android:textColorHint="#000000"
+        android:textColor="#000000"
+        android:background="#ffffff"
+        android:layout_marginTop="17dp"
+        android:id="@+id/type_input"
+        android:layout_below="@+id/type_list"
+        android:layout_alignLeft="@+id/assg_grade"
+        android:layout_alignStart="@+id/assg_grade" />
+
+</RelativeLayout>

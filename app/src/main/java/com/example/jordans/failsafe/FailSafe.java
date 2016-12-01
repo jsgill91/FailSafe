@@ -45,4 +45,9 @@ public class FailSafe implements Serializable{
     public ArrayList<String> get_types(String class_name){
         return user.get_types(class_name);
     }
+
+    public void add_grade(String class_name, String name, String type, double grade){
+
+        user.add_grade(class_name, name, type, grade);
+    }
 }
