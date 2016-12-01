@@ -65,4 +65,12 @@ public class User implements Serializable{
         return courseList[i].get_assignments();
     }
 
+    public ArrayList<String> get_types(String class_name){
+        int i = 0;
+        while(i <= num_courses && !(courseList[i].getCourseName().equals(class_name))){
+            i++;
+        }
+        return courseList[i].get_types();
+    }
+
 }

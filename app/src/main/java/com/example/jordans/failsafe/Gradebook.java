@@ -149,6 +149,20 @@ public class Gradebook extends SQLiteOpenHelper implements Serializable{
 
     }
 
+    public ArrayList<String> get_types(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        ArrayList<String> types = new ArrayList<>();
+        String myQuery;
+        myQuery = "SELECT Assg_Type, FROM TABLE_ASSIGNMENT_WEIGHTS";
+
+        Cursor cursor = db.rawQuery(myQuery,null);
+        while(cursor.moveToNext()){
+            types.add(cursor.getString(cursor.getColumnIndex("Assg_Type")));
+        }
+        return types;
+
+    }
+
     public void set_weight(String assignment, double weight) {
         /*
             Adds weights to the Weight table
