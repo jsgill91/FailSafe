@@ -2,6 +2,8 @@ package com.example.jordans.failsafe;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Iterator;
+
 
 /**
  * Created by Autumn on 9/14/2016.
@@ -48,6 +50,25 @@ public class User implements Serializable{
         num_courses++;
     }
 
+    public void deleteAll(Gradebook courseList){
+        Iterator<String> iterator = Gradebook.iterator();
+
+        while(iterator.hasNext()){
+            iterator.next();
+            iterator.remove();
+            courseList [] = new courseList[10];
+        }
+    }
+    public void deleteClass(Gradebook courseList) {
+        Iterator<String> iterator = Gradebook.iterator();
+
+        while (iterator.hasNext()) {
+            iterator.next();
+            iterator.remove();
+
+        }
+    }
+
     public double calculate_average(String class_name){
         int i = 0;
         while(i <= num_courses && !(courseList[i].getCourseName().equals(class_name))){
@@ -64,5 +85,6 @@ public class User implements Serializable{
         }
         return courseList[i].get_assignments();
     }
+
 
 }

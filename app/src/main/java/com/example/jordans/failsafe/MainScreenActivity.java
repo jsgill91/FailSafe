@@ -33,6 +33,25 @@ public class MainScreenActivity extends AppCompatActivity {
                 startActivity(nextScreen);
             }
         });
+        final Button DeleteClassBtn = (Button) findViewById(R.id.deleteBtn);
+
+        deleteBtn.setOnClickListener (new View.OnClickListener() {
+            Intent nextScreen = new Intent(v.getContext(),FailSafe.class);
+            //passing the serializable object
+            nextScreen.putExtra("FailSafe_System", FS_System);
+            startActivity(nextScreen);
+        }
+        final Button DeleteAllClassBtn = (Button) findViewById(R.id.deleteAllBtn);
+
+        deleteallBtn.setOnClickListener (new View.OnClickListener() {
+            Intent nextScreen = new Intent(v.getContext(),FailSafe.class);
+            //passing the serializable object
+            nextScreen.putExtra("FailSafe_System", FS_System);
+            startActivity(nextScreen);
+            @Override
+            public void onClick(View v) {
+
+            }
     }
 
 }

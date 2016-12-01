@@ -21,7 +21,8 @@
         android:text="Delete Class"
         android:id="@+id/deleteBtn"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onclick= "deleteClass"/>
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -31,6 +32,7 @@
         android:id="@+id/deleteAllBtn"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:onclick = "deleteAll"/>
 
 </RelativeLayout>
