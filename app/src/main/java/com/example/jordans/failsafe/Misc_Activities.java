@@ -69,14 +69,14 @@ public class Misc_Activities extends AppCompatActivity{
         //What If End
 
         //Add Grade Start
-        addGradeBtn.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                Intent nextScreen = new Intent(v.getContext(), AddGradeActivity.class);
-                nextScreen.putExtra("FailSafe_System", FS_System);
-                startActivity(nextScreen);
-            }
-        });
+//        addGradeBtn.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View v){
+//                Intent nextScreen = new Intent(v.getContext(), AddGradeActivity.class);
+//                nextScreen.putExtra("FailSafe_System", FS_System);
+//                startActivity(nextScreen);
+//            }
+//        });
         //Add Grade End
 
     }

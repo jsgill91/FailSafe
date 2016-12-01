@@ -2,11 +2,14 @@ package com.example.jordans.failsafe;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -29,6 +32,10 @@ public class AddClassActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_class_activity2);
         context = this.getApplicationContext();
+
+        final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences
+                (getApplicationContext());
+        final SharedPreferences.Editor editor = prefs.edit();
 
         Intent intent = this.getIntent();
         Bundle bundle = intent.getExtras();
@@ -88,6 +95,8 @@ public class AddClassActivity extends FragmentActivity {
         final EditText assg10_weight = (EditText) findViewById(R.id.assg10_weight_box);
         final EditText assg10_drop = (EditText) findViewById(R.id.assg10_drop_box);
         final TextView sym10 = (TextView) findViewById(R.id.symbol10);
+
+
 
         final Button submitButton = (Button) findViewById(R.id.classSubmitBtn);
         final Button newTypeButton = (Button) findViewById(R.id.newAssignmentType);
@@ -188,6 +197,12 @@ public class AddClassActivity extends FragmentActivity {
 
                 newClass.setCourseName(cNameField.getText().toString());
                 newClass.setCourseID(cIdField.getText().toString());
+
+                editor.putString("courseName", cNameField.getText().toString());
+                //editor.putString("courseId", cIdField.getText().toString());
+                editor.commit();
+
+
 
                 while(count <= assgCount){
                     switch (count){
@@ -389,8 +404,12 @@ public class AddClassActivity extends FragmentActivity {
                 Intent nextScreen = new Intent(v.getContext(), MainScreenActivity.class);
                 //passing the serializable object
                 nextScreen.putExtra("FailSafe_System", FS_System);
+               // final String btnText = cNameField.getText().toString();
+                nextScreen.putExtra("com.example.jordans.failsafe", cNameField.getText().toString());
+                //MainScreenActivity.visFlag = true;
                 startActivity(nextScreen);
                 //write methods to add buttons to class page to represent
+
             }
         });
     }
