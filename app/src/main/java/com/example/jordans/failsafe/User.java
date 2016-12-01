@@ -47,6 +47,17 @@ public class User implements Serializable{
         courseList[num_courses] = newClass;
         num_courses++;
     }
+    public void delete_class(String class_name){
+        int i = 0;
+    }
+    public void delete_All(String class_name){
+        int i = 0;
+        while(i <= num_courses && !(courseList[i].getCourseName().equals(class_name))){
+            i++;}
+
+
+
+    }
 
     public double calculate_average(String class_name){
         int i = 0;
@@ -66,4 +77,3 @@ public class User implements Serializable{
     }
 
 }
-//hjasbksdkhbkhdbdh
