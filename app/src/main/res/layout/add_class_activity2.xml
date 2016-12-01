@@ -12,7 +12,8 @@
         android:layout_marginRight="15dp"
         android:orientation="vertical"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true">
 
         <Button
             android:layout_width="fill_parent"
@@ -28,7 +29,9 @@
             android:id="@+id/newAssignmentType"
             android:layout_below="@+id/layoutContainer"
             android:layout_alignStart="@+id/layoutContainer"
-            android:layout_alignEnd="@+id/layoutContainer" />
+            android:layout_alignEnd="@+id/layoutContainer"
+            android:layout_alignLeft="@+id/layoutContainer"
+            android:layout_alignRight="@+id/layoutContainer"/>
 
     </LinearLayout>
 
@@ -44,6 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_above="@+id/layoutContainer">
 
         <TextView
@@ -120,8 +124,11 @@
             android:layout_below="@+id/weights"
             android:layout_marginTop="18dp"
             android:layout_alignStart="@+id/cID"
+            android:layout_alignLeft="@+id/cID"
             android:layout_toStartOf="@+id/cID"
-            android:layout_alignEnd="@+id/cName" />
+            android:layout_toLeftOf="@+id/cID"
+            android:layout_alignEnd="@+id/cName"
+            android:layout_alignRight="@+id/cName"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -144,8 +151,10 @@
             android:ems="10"
             android:id="@+id/assg1_drop_box"
             android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
             android:layout_alignBottom="@+id/assg1_weight_box"
-            android:layout_toEndOf="@+id/symbol1" />
+            android:layout_toEndOf="@+id/symbol1"
+            android:layout_toRightOf="@+id/symbol1"/>
 
         <TextView
             android:text="No. of Dropped Assignments:"
@@ -155,7 +164,9 @@
             android:id="@+id/dropLabel"
             android:layout_alignBottom="@+id/weights"
             android:layout_toEndOf="@+id/weights"
-            android:layout_marginStart="36dp" />
+            android:layout_marginStart="36dp"
+            android:layout_toRightOf="@+id/weights"
+            android:layout_marginLeft="36dp"/>
 
 
         <EditText
@@ -171,6 +182,8 @@
             android:layout_alignBottom="@+id/symbol1"
             android:layout_alignEnd="@+id/genInfo"
             android:layout_toEndOf="@+id/assgInfo"
+            android:layout_alignRight="@+id/genInfo"
+            android:layout_toRightOf="@+id/assgInfo"
             android:layout_alignTop="@+id/symbol1" />
 
 
@@ -188,8 +201,10 @@
             android:ems="3"
             android:layout_below="@+id/assg1_name"
             android:layout_alignStart="@+id/assg1_name"
+            android:layout_alignLeft="@+id/assg1_name"
             android:layout_marginTop="11dp"
-            android:layout_alignEnd="@+id/assg1_name" />
+            android:layout_alignEnd="@+id/assg1_name"
+            android:layout_alignRight="@+id/assg1_name"/>
 
         <EditText
             android:visibility="gone"
@@ -205,7 +220,9 @@
             android:layout_alignBaseline="@+id/symbol2"
             android:layout_alignBottom="@+id/symbol2"
             android:layout_alignEnd="@+id/genInfo"
-            android:layout_toEndOf="@+id/assgInfo" />
+            android:layout_alignRight="@+id/genInfo"
+            android:layout_toEndOf="@+id/assgInfo"
+            android:layout_toRightOf="@+id/assgInfo"/>
 
         <TextView
             android:visibility="gone"
@@ -230,8 +247,10 @@
             android:ems="10"
             android:id="@+id/assg2_drop_box"
             android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
             android:layout_alignBottom="@+id/assg2_weight_box"
-            android:layout_toEndOf="@+id/symbol2" />
+            android:layout_toEndOf="@+id/symbol2"
+            android:layout_toRightOf="@+id/symbol2"/>
 
         <!-- Assignment 3 -->
 
@@ -249,7 +268,9 @@
             android:layout_alignBaseline="@+id/symbol3"
             android:layout_alignBottom="@+id/symbol3"
             android:layout_alignEnd="@+id/genInfo"
-            android:layout_toEndOf="@+id/assgInfo" />
+            android:layout_toEndOf="@+id/assgInfo"
+            android:layout_alignRight="@+id/genInfo"
+            android:layout_toRightOf="@+id/assgInfo"/>
 
         <TextView
             android:visibility="gone"
@@ -275,7 +296,9 @@
             android:id="@+id/assg3_drop_box"
             android:layout_marginStart="32dp"
             android:layout_alignBottom="@+id/assg3_weight_box"
-            android:layout_toEndOf="@+id/symbol3" />
+            android:layout_toEndOf="@+id/symbol3"
+            android:layout_marginLeft="32dp"
+            android:layout_toRightOf="@+id/symbol3"/>
 
         <EditText
             android:visibility="gone"
@@ -289,8 +312,10 @@
             android:ems="3"
             android:layout_below="@+id/assg2_name"
             android:layout_alignStart="@+id/assg1_name"
+            android:layout_alignLeft="@+id/assg1_name"
             android:layout_marginTop="16dp"
-            android:layout_alignEnd="@+id/assg2_name" />
+            android:layout_alignEnd="@+id/assg2_name"
+            android:layout_alignRight="@+id/assg2_name"/>
 
         <!-- Assignment 4 -->
 
@@ -308,7 +333,9 @@
             android:layout_alignBaseline="@+id/symbol4"
             android:layout_alignBottom="@+id/symbol4"
             android:layout_alignEnd="@+id/genInfo"
-            android:layout_toEndOf="@+id/assgInfo" />
+            android:layout_toEndOf="@+id/assgInfo"
+            android:layout_alignRight="@+id/genInfo"
+            android:layout_toRightOf="@+id/assgInfo"/>
 
         <TextView
             android:visibility="gone"
@@ -317,6 +344,7 @@
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/assg4_name"
             android:layout_toEndOf="@+id/assg4_weight_box"
+            android:layout_toRightOf="@+id/assg4_weight_box"
             android:id="@+id/symbol4" />
 
 
@@ -333,7 +361,9 @@
             android:id="@+id/assg4_drop_box"
             android:layout_marginStart="32dp"
             android:layout_alignBottom="@+id/assg4_weight_box"
-            android:layout_toEndOf="@+id/symbol4" />
+            android:layout_toEndOf="@+id/symbol4"
+            android:layout_marginLeft="32dp"
+            android:layout_toRightOf="@+id/symbol4"/>
 
         <EditText
             android:visibility="gone"
@@ -348,7 +378,10 @@
             android:layout_below="@+id/assg3_name"
             android:layout_alignStart="@+id/assg1_name"
             android:layout_marginTop="16dp"
-            android:layout_alignEnd="@+id/assg1_name" />
+            android:layout_alignEnd="@+id/assg1_name"
+            android:layout_alignLeft="@+id/assg1_name"
+            android:layout_alignRight="@+id/assg1_name"
+            />
 
         <!-- Assignment 5 -->
 
@@ -366,7 +399,9 @@
             android:layout_alignBaseline="@+id/symbol5"
             android:layout_alignBottom="@+id/symbol5"
             android:layout_alignEnd="@+id/genInfo"
-            android:layout_toEndOf="@+id/assgInfo" />
+            android:layout_toEndOf="@+id/assgInfo"
+            android:layout_alignRight="@+id/genInfo"
+            android:layout_toRightOf="@+id/assgInfo"/>
 
         <TextView
             android:visibility="gone"
@@ -391,8 +426,9 @@
             android:ems="10"
             android:id="@+id/assg5_drop_box"
             android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
             android:layout_alignBottom="@+id/assg5_weight_box"
-            android:layout_toEndOf="@+id/symbol5" />
+            android:layout_toRightOf="@+id/symbol5" />
 
         <EditText
             android:visibility="gone"
@@ -406,8 +442,10 @@
             android:ems="3"
             android:layout_below="@+id/assg4_name"
             android:layout_alignStart="@+id/assg1_name"
+            android:layout_alignLeft="@+id/assg1_name"
             android:layout_marginTop="16dp"
-            android:layout_alignEnd="@+id/assg1_name" />
+            android:layout_alignEnd="@+id/assg1_name"
+            android:layout_alignRight="@+id/assg1_name"/>
 
         <!-- Assignment 6 -->
 
@@ -425,7 +463,9 @@
             android:layout_alignBaseline="@+id/symbol6"
             android:layout_alignBottom="@+id/symbol6"
             android:layout_alignEnd="@+id/genInfo"
-            android:layout_toEndOf="@+id/assgInfo" />
+            android:layout_toEndOf="@+id/assgInfo"
+            android:layout_alignRight="@+id/genInfo"
+            android:layout_toRightOf="@+id/assgInfo"/>
 
         <TextView
             android:visibility="gone"
@@ -450,8 +490,10 @@
             android:ems="10"
             android:id="@+id/assg6_drop_box"
             android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
             android:layout_alignBottom="@+id/assg6_weight_box"
-            android:layout_toEndOf="@+id/symbol6" />
+            android:layout_toEndOf="@+id/symbol6"
+            android:layout_toRightOf="@+id/symbol6"/>
 
         <EditText
             android:visibility="gone"
@@ -465,8 +507,10 @@
             android:ems="3"
             android:layout_below="@+id/assg5_name"
             android:layout_alignStart="@+id/assg1_name"
+            android:layout_alignLeft="@+id/assg1_name"
             android:layout_marginTop="16dp"
-            android:layout_alignEnd="@+id/assg1_name" />
+            android:layout_alignEnd="@+id/assg1_name"
+            android:layout_alignRight="@+id/assg1_name"/>
 
         <!-- Assignment 7 -->
 
@@ -484,7 +528,9 @@
             android:layout_alignBaseline="@+id/symbol7"
             android:layout_alignBottom="@+id/symbol7"
             android:layout_alignEnd="@+id/genInfo"
-            android:layout_toEndOf="@+id/assgInfo" />
+            android:layout_toEndOf="@+id/assgInfo"
+            android:layout_alignRight="@+id/genInfo"
+            android:layout_toRightOf="@+id/assgInfo"/>
 
         <TextView
             android:visibility="gone"
@@ -510,7 +556,9 @@
             android:id="@+id/assg7_drop_box"
             android:layout_marginStart="32dp"
             android:layout_alignBottom="@+id/assg7_weight_box"
-            android:layout_toEndOf="@+id/symbol7" />
+            android:layout_toEndOf="@+id/symbol7"
+            android:layout_marginLeft="32dp"
+            android:layout_toRightOf="@+id/symbol7"/>
 
         <EditText
             android:visibility="gone"
@@ -524,8 +572,10 @@
             android:ems="3"
             android:layout_below="@+id/assg6_name"
             android:layout_alignStart="@+id/assg1_name"
+            android:layout_alignLeft="@+id/assg1_name"
             android:layout_marginTop="16dp"
-            android:layout_alignEnd="@+id/assg1_name" />
+            android:layout_alignEnd="@+id/assg1_name"
+            android:layout_alignRight="@+id/assg1_name"/>
 
         <!-- Assignment 8 -->
 
@@ -543,7 +593,9 @@
             android:layout_alignBaseline="@+id/symbol8"
             android:layout_alignBottom="@+id/symbol8"
             android:layout_alignEnd="@+id/genInfo"
-            android:layout_toEndOf="@+id/assgInfo" />
+            android:layout_toEndOf="@+id/assgInfo"
+            android:layout_alignRight="@+id/genInfo"
+            android:layout_toRightOf="@+id/assgInfo"/>
 
         <TextView
             android:visibility="gone"
@@ -568,8 +620,10 @@
             android:ems="10"
             android:id="@+id/assg8_drop_box"
             android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
             android:layout_alignBottom="@+id/assg8_weight_box"
-            android:layout_toEndOf="@+id/symbol8" />
+            android:layout_toEndOf="@+id/symbol8"
+            android:layout_toRightOf="@+id/symbol8"/>
 
         <EditText
             android:visibility="gone"
@@ -583,8 +637,9 @@
             android:ems="3"
             android:layout_below="@+id/assg7_name"
             android:layout_alignStart="@+id/assg1_name"
+            android:layout_alignLeft="@+id/assg1_name"
             android:layout_marginTop="16dp"
-            android:layout_alignEnd="@+id/assg1_name" />
+            android:layout_alignRight="@+id/assg1_name" />
 
         <!-- Assignment 9 -->
 
@@ -602,7 +657,9 @@
             android:layout_alignBaseline="@+id/symbol9"
             android:layout_alignBottom="@+id/symbol9"
             android:layout_alignEnd="@+id/genInfo"
-            android:layout_toEndOf="@+id/assgInfo" />
+            android:layout_toEndOf="@+id/assgInfo"
+            android:layout_alignRight="@+id/genInfo"
+            android:layout_toRightOf="@+id/assgInfo"/>
 
         <TextView
             android:visibility="gone"
@@ -627,8 +684,10 @@
             android:ems="10"
             android:id="@+id/assg9_drop_box"
             android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
             android:layout_alignBottom="@+id/assg9_weight_box"
-            android:layout_toEndOf="@+id/symbol9" />
+            android:layout_toEndOf="@+id/symbol9"
+            android:layout_toRightOf="@+id/symbol9"/>
 
         <EditText
             android:visibility="gone"
@@ -642,8 +701,10 @@
             android:ems="3"
             android:layout_below="@+id/assg8_name"
             android:layout_alignStart="@+id/assg1_name"
+            android:layout_alignLeft="@+id/assg1_name"
             android:layout_marginTop="16dp"
-            android:layout_alignEnd="@+id/assg1_name" />
+            android:layout_alignEnd="@+id/assg1_name"
+            android:layout_alignRight="@+id/assg1_name"/>
 
         <!-- Assignment 10 -->
 
@@ -661,7 +722,9 @@
             android:layout_alignBaseline="@+id/symbol10"
             android:layout_alignBottom="@+id/symbol10"
             android:layout_alignEnd="@+id/genInfo"
-            android:layout_toEndOf="@+id/assgInfo" />
+            android:layout_toEndOf="@+id/assgInfo"
+            android:layout_alignRight="@+id/genInfo"
+            android:layout_toRightOf="@+id/assgInfo"/>
 
         <TextView
             android:visibility="gone"
@@ -686,8 +749,9 @@
             android:ems="10"
             android:id="@+id/assg10_drop_box"
             android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
             android:layout_alignBottom="@+id/assg10_weight_box"
-            android:layout_toEndOf="@+id/symbol10" />
+            android:layout_toRightOf="@+id/symbol10" />
 
         <EditText
             android:visibility="gone"
@@ -701,8 +765,10 @@
             android:ems="3"
             android:layout_below="@+id/assg9_name"
             android:layout_alignStart="@+id/assg1_name"
+            android:layout_alignLeft="@+id/assg1_name"
             android:layout_marginTop="16dp"
-            android:layout_alignEnd="@+id/assg1_name" />
+            android:layout_alignEnd="@+id/assg1_name"
+            android:layout_alignRight="@+id/assg1_name"/>
 
 
 
