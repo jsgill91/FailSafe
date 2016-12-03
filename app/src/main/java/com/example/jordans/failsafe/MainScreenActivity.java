@@ -86,6 +86,7 @@ public class MainScreenActivity extends AppCompatActivity {
                     classButton1.setOnClickListener(new View.OnClickListener() {
                         public void onClick(View view) {
                             Intent intent = new Intent(MainScreenActivity.this, ClassPage1.class);
+                            intent.putExtra("FailSafe_Sysytem", FS_System);
                             startActivity(intent);
                         }
                     });

@@ -1,13 +1,10 @@
 package com.example.jordans.failsafe;
 
-import android.content.ContentValues;
-import android.content.Context;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
+
 
 /**
  * Created by Autumn on 9/8/2016.
@@ -25,44 +22,17 @@ import java.util.ArrayList;
  *          - work on what_if next
  *          - still need to test this. Like, soon.
  */
-public class Gradebook extends SQLiteOpenHelper implements Serializable{
+public class Gradebook  implements Serializable{
 
     private String courseName;
     private String courseID;
 
     private ArrayList<String> assgList;
-    private int idGenerator;
+    private ArrayList<String[]> gradeList;
+    private ArrayList<Double> weightList;
+    private ArrayList<Integer> dropList;
 
-    private static final int DATABASE_VERSION = 1;
-    private static final String DATABASE_NAME = "Schedule"; //database name
-    //Table 1
-    private static final String TABLE_ASSIGNMENTS = "Assignments";
-    //Table 1 column names
-    private static final String ASSG_ID = "ID";
-    private static final String ASSG_NAME = "Name";
-    private static final String ASSG_DUE_DATE = "Due Date";
-    private static final String ASSG_TYPE = "Type";
-    private static final String ASSG_DESCRIPTION = "Description";
-    private static final String ASSG_GRADE = "Grade";
-
-    //Table 2
-    //subbed "Toss" for all occurrences of "Drop" bc doing so made it stop giving me errors! :)
-    //for some reason it didn't matter that I didn't change the "Drop" in the variable names...
-    private static final String TABLE_ASSIGNMENT_DROPS = "Tossed_Assignments";
-    //Table 2 column names
-    private static final String DROP_ASSG_TYPE = "Assg_Type";
-    private static final String DROP_NUMBER = "Toss_Number";
-
-    //Table 3
-    private static final String TABLE_ASSIGNMENT_WEIGHTS = "Assignment_Weights";
-    //Table 2 column names
-    private static final String WEIGHT_ASSG_TYPE = "Assg_Type";
-    private static final String WEIGHT = "Weight";
-
-    public Gradebook(Context context){
-        super(context, DATABASE_NAME, null, DATABASE_VERSION);
-    }
-
+    public Gradebook(){}
 
     public void setCourseName(String name){
         courseName = name;
@@ -91,27 +61,7 @@ public class Gradebook extends SQLiteOpenHelper implements Serializable{
 
 
     /*------ DATABASE METHODS ------*/
-    @Override
-    public void onCreate(SQLiteDatabase db){
-        String CREATE_ASSIGNMENTS_TABLE = "CREATE TABLE " + TABLE_ASSIGNMENTS + "(" + ASSG_ID +
-                " INTEGER PRIMARY KEY," + ASSG_NAME + " TEXT NOT NULL," + ASSG_DUE_DATE + " TEXT NOT NULL," + ASSG_TYPE + " TEXT NOT NULL," +
-                ASSG_DESCRIPTION + " TEXT NOT NULL," + ASSG_GRADE + " DOUBLE NOT NULL)";
-        String CREATE_DROPS_TABLE = "CREATE TABLE " + TABLE_ASSIGNMENT_DROPS + "(" + DROP_ASSG_TYPE +
-                " TEXT PRIMARY KEY," + DROP_NUMBER + " INTEGER NOT NULL)";
-        String CREATE_WEIGHTS_TABLE = "CREATE TABLE " + TABLE_ASSIGNMENT_WEIGHTS + "(" + WEIGHT_ASSG_TYPE +
-                " TEXT PRIMARY KEY," + WEIGHT + " DOUBLE NOT NULL)";
-        db.execSQL(CREATE_ASSIGNMENTS_TABLE);
-        db.execSQL(CREATE_DROPS_TABLE);
-        db.execSQL(CREATE_WEIGHTS_TABLE);
-    }
 
-    @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_ASSIGNMENTS);
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_ASSIGNMENT_DROPS);
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_ASSIGNMENT_WEIGHTS);
-        onCreate(db);
-    }
     /*
         Okay, the way the addAssignments CURRENTLY works is an com.example.autumn.failsafe.Assignment object
         is still created in FailSafe and stored in the Calendar. Before exiting
@@ -120,127 +70,32 @@ public class Gradebook extends SQLiteOpenHelper implements Serializable{
         A note: Assignments still need to be given numbers to uniquely identify
         them in the database since i can't figure out how to make a superkey
      */
-    public void add_assignment(String name, String due_date, String type, String description){
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put(ASSG_ID, idGenerator);
-        values.put(ASSG_NAME, name);
-        values.put(ASSG_DUE_DATE, due_date);
-        values.put(ASSG_TYPE, type);
-        values.put(ASSG_DESCRIPTION, description);
-
-        db.insert(TABLE_ASSIGNMENTS, null, values);
-        db.close();
-        idGenerator++;
-    }
 
     //method modified so that a user enters an assignment at the same time they enter the grade;
     // can be change later. For now, instead of getting rid of the unnecessary columns, "" is passed in for their values
     //essentially combines add_assignment and add_grade
     public void add_grade(String name, String type, double grade){
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put(ASSG_ID, idGenerator);
-        values.put(ASSG_NAME, name);
-        values.put(ASSG_DUE_DATE, "");
-        values.put(ASSG_TYPE, type);
-        values.put(ASSG_DESCRIPTION, "");
-        values.put(String.valueOf(ASSG_GRADE), grade);
-
-        db.insert(TABLE_ASSIGNMENTS,null,values);
-        db.close();
-        idGenerator++;
+        String[] tuple = {name,type,String.valueOf(grade)};
+        gradeList.add(tuple);
     }
 
-    public ArrayList<String> get_types(){
-        SQLiteDatabase db = this.getReadableDatabase();
-        ArrayList<String> types = new ArrayList<>();
-        String myQuery;
-        myQuery = "SELECT Assg_Type, FROM TABLE_ASSIGNMENT_WEIGHTS";
-
-        Cursor cursor = db.rawQuery(myQuery,null);
-        while(cursor.moveToNext()){
-            types.add(cursor.getString(cursor.getColumnIndex("Assg_Type")));
-        }
-        return types;
-
+    public void set_weightList(ArrayList<Double> weights) {
+        weightList = weights;
     }
 
-    public void set_weight(String assignment, double weight) {
-        /*
-            Adds weights to the Weight table
-         */
-
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
-
-        values.put(WEIGHT_ASSG_TYPE, assignment);
-        values.put(WEIGHT, weight);
-
-
-        db.insert(TABLE_ASSIGNMENT_WEIGHTS, null, values);
-        db.close();
+    public void set_drop(ArrayList<Integer> drops) {
+        dropList = drops;
     }
 
-    public void set_drop(String assignment, int drop_num) {
-        //need to check if the assignment is already in this table and replace
-        //the values if so
-        //adds number of dropped assignments to the Tossed table
-
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
-
-        values.put(DROP_ASSG_TYPE, assignment);
-        values.put(DROP_NUMBER, drop_num);
-
-
-        db.insert(TABLE_ASSIGNMENT_DROPS, null, values);
-        db.close();
-    }
-
-    public ArrayList<String> get_assignments(){
+    public ArrayList<String[]> get_grades(){
         //what should this return?
         //an arraylist
-        SQLiteDatabase db = this.getReadableDatabase();
-        ArrayList<String> assignments = new ArrayList<String>();
-        String myQuery;
-
-        myQuery = "SELECT Name, Type, Grade, FROM TABLE_ASSIGNMENTS " +
-                "ORDER BY Type";
-
-        Cursor cursor = db.rawQuery(myQuery,null);
-        if(cursor != null){
-            while(cursor.moveToNext()){
-                //assignments.add(cursor.getString(cursor.getColumnIndex("Name")));
-                assignments.add(cursor.getString(cursor.getColumnIndex("Type")));
-                assignments.add(String.valueOf(cursor.getDouble(cursor.getColumnIndex("Grade"))));
-            }
-        }
-        cursor.close();
-        return assignments;
+        return gradeList;
     }
 
-    public double calculate_assignment_average(String assignment){
-        SQLiteDatabase db = this.getReadableDatabase();
-
-        String myQuery;
-
-        myQuery = "SELECT Type, AVG(CAST(Grade AS DOUBLE)) AS Average FROM TABLE_ASSIGNMENTS " +
-                "ORDER BY Grade DESC LIMIT COUNT(Type)-(Select " + "drop_num FROM TABLE_ASSIGNMENT_DROPS " +
-                "WHERE assg_type = " + assignment + ")";
-
-        Cursor cursor = db.rawQuery(myQuery,null);
-        double avg = cursor.getDouble(cursor.getColumnIndex("Toss_Number"));
-
-        cursor.close();
-        return avg;
-    }
 
     public double calculate_average(){
-        SQLiteDatabase db = this.getReadableDatabase();
 
-        String myQuery;
-        String myQuery2;
         /*
             Okay, right now, this function (cough, should):
                 1) Query the Assignment table and produce an average for each assignment type
@@ -260,47 +115,34 @@ public class Gradebook extends SQLiteOpenHelper implements Serializable{
              an error or will it just subtract zero and keep moving?
         */
 
-        myQuery = "SELECT Type, AVG(CAST(Grade AS DOUBLE)) AS Average FROM TABLE_ASSIGNMENTS " + 
-                "ORDER BY Grade DESC LIMIT COUNT(Type)-(Select " + "drop_num FROM TABLE_ASSIGNMENT_DROPS " +
-                "WHERE assg_type = Type)";
-
-        Cursor cursor = db.rawQuery(myQuery,null);
-        double avg;
-        double total_average = 0;
-        if(cursor != null){
-            while(cursor.moveToNext()){
-                myQuery2 = "Select Weight FROM TABLE_ASSIGNMENT_WEIGHTS WHERE Assg_Type = " + cursor.getString(cursor.getColumnIndex("Type"));
-                Cursor cursor2 = db.rawQuery(myQuery2,null);
-
-                avg = cursor.getDouble(cursor.getColumnIndex("Average")) * cursor2.getDouble((cursor2.getColumnIndex("Weight")));
-                total_average += avg;
-
-                cursor2.close();
+        //gradeList = name, type, grade <-- drop lowest
+        double final_grade = 0;
+        int ptr = 0;
+        String currentType;
+        ArrayList<Double> grades = new ArrayList<>();
+        while(ptr <= assgList.size()){
+            currentType = assgList.get(ptr);
+            for(int i = 1; i < gradeList.size(); i++){
+                if(gradeList.get(i)[2].equals(currentType)){
+                    grades.add(Double.valueOf(gradeList.get(i)[2]));
+                }
             }
+            Collections.sort(grades);
+            int stop = grades.size() - dropList.get(ptr);
+            double type_grade = 0;
+
+            //less than stop
+            for(int j = 0; j < stop; j++){
+                type_grade += grades.get(j);
+            }
+            final_grade += (type_grade/(grades.size() - dropList.get(ptr))) * weightList.get(ptr);
+            ptr++;
         }
 
-        cursor.close();
-        return total_average;
+        return final_grade;
+
     }
 
-    public double what_if(){
-
-        double average = 0;
-        /*
-            Could write this to "temporarily" add Assignment objects to the database
-            (just DON'T FORGET TO DELETE THEM WHEN FINISHED!) then run calculate_full_grade
-            over the modified database.
-        */
-
-        /*
-            - print out list of assignment types (and grades?)
-            - next to each assignment type, have an "Add Grade" button
-            -
-
-         */
-
-        return average;
-    }
 
 
 }

@@ -76,7 +76,7 @@ public class User implements Serializable{
         while(i <= num_courses && !(courseList[i].getCourseName().equals(class_name))){
             i++;
         }
-        return courseList[i].get_assignments();
+        return courseList[i].getAssignmentList();
     }
 
     public void add_grade(String class_name, String name, String assg_type, double grade){
@@ -92,7 +92,7 @@ public class User implements Serializable{
         while(i <= num_courses && !(courseList[i].getCourseName().equals(class_name))){
             i++;
         }
-        return courseList[i].get_types();
+        return courseList[i].getAssignmentList();
     }
 
 }

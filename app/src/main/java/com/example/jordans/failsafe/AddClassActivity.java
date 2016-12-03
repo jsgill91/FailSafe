@@ -25,13 +25,11 @@ import java.util.ArrayList;
  */
 public class AddClassActivity extends FragmentActivity {
     public FailSafe FS_System;
-    private Context context;
     private int assgCount = 1;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_class_activity2);
-        context = this.getApplicationContext();
 
         final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences
                 (getApplicationContext());
@@ -96,14 +94,14 @@ public class AddClassActivity extends FragmentActivity {
         final EditText assg10_drop = (EditText) findViewById(R.id.assg10_drop_box);
         final TextView sym10 = (TextView) findViewById(R.id.symbol10);
 
-        final Gradebook newClass = new Gradebook(context);
+        final Gradebook newClass = new Gradebook();
 
 
         final Button submitButton = (Button) findViewById(R.id.classSubmitBtn);
         final Button newTypeButton = (Button) findViewById(R.id.newAssignmentType);
 
-        final ArrayList<double> weights = new ArrayList<>();
-        final ArrayList<int> drops = new ArrayList<>();
+        final ArrayList<Double> weights = new ArrayList<>();
+        final ArrayList<Integer> drops = new ArrayList<>();
 
         newTypeButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -410,7 +408,7 @@ public class AddClassActivity extends FragmentActivity {
                 Intent nextScreen = new Intent(v.getContext(), MainScreenActivity.class);
                 //passing the serializable object
                 nextScreen.putExtra("FailSafe_System", FS_System);
-               // final String btnText = cNameField.getText().toString();
+                // final String btnText = cNameField.getText().toString();
                 nextScreen.putExtra("com.example.jordans.failsafe", cNameField.getText().toString());
                 //MainScreenActivity.visFlag = true;
                 startActivity(nextScreen);

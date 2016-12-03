@@ -23,11 +23,8 @@ public class AddGradeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.what_if_activity);
+        setContentView(R.layout.add_grade_activity);
         getSupportActionBar().hide();
-
-
-
 
         //check if there IS a serializable object to overwrite FS_System with
 
@@ -60,7 +57,8 @@ public class AddGradeActivity extends AppCompatActivity {
         final SharedPreferences.Editor editor = preferences.edit();
         String class_name = preferences.getString("courseName","DEFAULT");
 
-        final ArrayList<String> types = FS_System.get_types(class_name);
+        final ArrayList<String> types;
+        types = FS_System.get_types(class_name);
 
         String typeList = "(available assignment types: ";
         for(int i = 0; i <= types.size(); i++){
@@ -89,7 +87,7 @@ public class AddGradeActivity extends AppCompatActivity {
                     Toast.makeText(v.getContext(), "Must input an assignment grade", Toast.LENGTH_LONG).show();
                 }
                 else{
-                    FS_System.add_grade("placeholder_classname", name.getText().toString(), type.getText().toString(), Double.valueOf(grade.getText().toString()));
+                    FS_System.add_grade("classname", name.getText().toString(), type.getText().toString(), Double.valueOf(grade.getText().toString()));
                 }
 
 
