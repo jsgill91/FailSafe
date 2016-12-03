@@ -27,9 +27,12 @@ public class AddGradeActivity extends AppCompatActivity {
         getSupportActionBar().hide();
 
 
+
+
         //check if there IS a serializable object to overwrite FS_System with
 
-        Intent intent = this.getIntent();
+        Intent intent = getIntent();
+
         Bundle bundle = intent.getExtras();
         if (bundle != null) {
             FS_System = (FailSafe) bundle.getSerializable("FailSafe_System");
@@ -52,7 +55,9 @@ public class AddGradeActivity extends AppCompatActivity {
         final TextView typeView = (TextView) findViewById(R.id.type_list);
         final Button submitBtn = (Button) findViewById(R.id.newGradeBtn);
 
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences
+                (getApplicationContext());
+        final SharedPreferences.Editor editor = preferences.edit();
         String class_name = preferences.getString("courseName","DEFAULT");
 
         final ArrayList<String> types = FS_System.get_types(class_name);
@@ -86,6 +91,9 @@ public class AddGradeActivity extends AppCompatActivity {
                 else{
                     FS_System.add_grade("placeholder_classname", name.getText().toString(), type.getText().toString(), Double.valueOf(grade.getText().toString()));
                 }
+
+
+                editor.putString("assignName", name.getText().toString());
 
                 //pass control back to whatever class
             }

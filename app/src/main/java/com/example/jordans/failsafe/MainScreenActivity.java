@@ -15,9 +15,8 @@ import android.widget.Button;
 public class MainScreenActivity extends AppCompatActivity {
     public FailSafe FS_System = new FailSafe();
     int classCount;
-    static boolean visFlag = false;
-    //put sharedprefences thing here for visFlag
-//    private Button[] classButtons = new Button[8];
+
+
 
 
 
@@ -28,6 +27,8 @@ public class MainScreenActivity extends AppCompatActivity {
         final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences
                 (getApplicationContext());
         final SharedPreferences.Editor editor = prefs.edit();
+
+
         classCount = prefs.getInt("classCount", 0);
 
 
@@ -38,6 +39,7 @@ public class MainScreenActivity extends AppCompatActivity {
             FS_System = (FailSafe) bundle.getSerializable("FailSafe_System");
         }
         final Button addBtn = (Button) findViewById(R.id.addClassBtn);
+
         final Button classButton1 = (Button) findViewById(R.id.classButton1);
         final Button classButton2 = (Button) findViewById(R.id.classButton2);
         final Button classButton3 = (Button) findViewById(R.id.classButton3);
@@ -49,6 +51,8 @@ public class MainScreenActivity extends AppCompatActivity {
         final Button classButton9 = (Button) findViewById(R.id.classButton9);
 
         //classButton1. = "com.example.jordans.failsafe";
+
+
 
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,69 +78,124 @@ public class MainScreenActivity extends AppCompatActivity {
             switch (i) {
                 case 0:
                     classButton1.setVisibility(View.VISIBLE);
-                    String btnTxt = prefs.getString("courseName", "Course");
-                    classButton1.setText(btnTxt);
+                    //editor.putString("BtnText", prefs.getString("courseName", "Course"));
+                    String bText = prefs.getString("courseName", "DEFAULT");
+                    classButton1.setText(bText);
+
+                    setBtnTxt(classButton1);
                     classButton1.setOnClickListener(new View.OnClickListener() {
                         public void onClick(View view) {
                             Intent intent = new Intent(MainScreenActivity.this, ClassPage1.class);
                             startActivity(intent);
                         }
                     });
-                    //classCount++;
+
                     break;
+
                 case 1:
                     classButton2.setVisibility(View.VISIBLE);
-                    //classCount++;
+                    String bText2 = prefs.getString("courseName2", "DEFAULT");
+                    classButton1.setText(bText2);
+                    classButton1.setText(bText2);
+                    classButton2.setOnClickListener(new View.OnClickListener() {
+                        public void onClick(View view) {
+                            Intent intent = new Intent(MainScreenActivity.this, ClassPage2.class);
+                            startActivity(intent);
+                        }
+                    });
+
                     break;
                 case 2:
                     classButton3.setVisibility(View.VISIBLE);
-                    //classCount++;
+                    setBtnTxt(classButton3);
+                    classButton3.setOnClickListener(new View.OnClickListener() {
+                        public void onClick(View view) {
+                            Intent intent = new Intent(MainScreenActivity.this, ClassPage3.class);
+                            startActivity(intent);
+                        }
+                    });
                     break;
                 case 3:
                     classButton4.setVisibility(View.VISIBLE);
-                    //classCount++;
+                    setBtnTxt(classButton4);
+                    classButton4.setOnClickListener(new View.OnClickListener() {
+                        public void onClick(View view) {
+                            Intent intent = new Intent(MainScreenActivity.this, ClassPage4.class);
+                            startActivity(intent);
+                        }
+                    });
                     break;
                 case 4:
                     classButton5.setVisibility(View.VISIBLE);
-                    //classCount++;
+                    setBtnTxt(classButton5);
+                    classButton5.setOnClickListener(new View.OnClickListener() {
+                        public void onClick(View view) {
+                            Intent intent = new Intent(MainScreenActivity.this, ClassPage5.class);
+                            startActivity(intent);
+                        }
+                    });
                     break;
                 case 5:
                     classButton6.setVisibility(View.VISIBLE);
-                    //classCount++;
+                    setBtnTxt(classButton6);
+                    classButton6.setOnClickListener(new View.OnClickListener() {
+                        public void onClick(View view) {
+                            Intent intent = new Intent(MainScreenActivity.this, ClassPage6.class);
+                            startActivity(intent);
+                        }
+                    });
                     break;
                 case 6:
                     classButton7.setVisibility(View.VISIBLE);
-                    //classCount++;
+                    setBtnTxt(classButton7);
+                    classButton7.setOnClickListener(new View.OnClickListener() {
+                        public void onClick(View view) {
+                            Intent intent = new Intent(MainScreenActivity.this, ClassPage7.class);
+                            startActivity(intent);
+                        }
+                    });
                     break;
                 case 7:
                     classButton8.setVisibility(View.VISIBLE);
-                 //   classCount++;
+                    setBtnTxt(classButton8);
+                    classButton8.setOnClickListener(new View.OnClickListener() {
+                        public void onClick(View view) {
+                            Intent intent = new Intent(MainScreenActivity.this, ClassPage8.class);
+                            startActivity(intent);
+                        }
+                    });
                     break;
                 case 8:
                     classButton9.setVisibility(View.VISIBLE);
-                 //   classCount++;
+                    setBtnTxt(classButton9);
+                    classButton9.setOnClickListener(new View.OnClickListener() {
+                        public void onClick(View view) {
+                            Intent intent = new Intent(MainScreenActivity.this, ClassPage9.class);
+                            startActivity(intent);
+                        }
+                    });
                     addBtn.setClickable(false);
                     //toast to delete classes instead?
                     break;
             }
             i++;
 
+
+
             editor.putInt("classCount",classCount);
             editor.commit();
         }
 
-
     }
 
-//    public boolean setVisible(Button classBtn) {
-//       // visFlag = true;
-//        classBtn.setVisibility(View.VISIBLE);
-//        return true;
-//    }
-//
-//    private void setInvisible(Button classBtn) {
-//        visFlag = false;
-//        classBtn.setVisibility(View.GONE);
-//    }
+    private void setBtnTxt(Button classBtn) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences
+                (getApplicationContext());
+        SharedPreferences.Editor editor = prefs.edit();
+        if (classBtn.getText().equals("Button")) {
+            String btnTxt = prefs.getString("courseName", "Course");
+            classBtn.setText(btnTxt);
+        }
+    }
 
 }
