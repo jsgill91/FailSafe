@@ -96,10 +96,14 @@ public class AddClassActivity extends FragmentActivity {
         final EditText assg10_drop = (EditText) findViewById(R.id.assg10_drop_box);
         final TextView sym10 = (TextView) findViewById(R.id.symbol10);
 
+        final Gradebook newClass = new Gradebook(context);
 
 
         final Button submitButton = (Button) findViewById(R.id.classSubmitBtn);
         final Button newTypeButton = (Button) findViewById(R.id.newAssignmentType);
+
+        final ArrayList<double> weights = new ArrayList<>();
+        final ArrayList<int> drops = new ArrayList<>();
 
         newTypeButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -187,7 +191,7 @@ public class AddClassActivity extends FragmentActivity {
             @Override
             public void onClick(View v){
 
-                Gradebook newClass = new Gradebook(context);
+                //Gradebook newClass = new Gradebook(context);
                 ArrayList<String> classList = new ArrayList<>();
                 String nameString;
                 String weightString;
@@ -199,7 +203,8 @@ public class AddClassActivity extends FragmentActivity {
                 newClass.setCourseID(cIdField.getText().toString());
 
                 editor.putString("courseName", cNameField.getText().toString());
-                //editor.putString("courseId", cIdField.getText().toString());
+                editor.commit();
+                editor.putString("courseId", cIdField.getText().toString());
                 editor.commit();
 
 
@@ -220,8 +225,9 @@ public class AddClassActivity extends FragmentActivity {
                                 dropString = "0";
                             }
 
-                            newClass.set_weight(nameString,weight);
-                            newClass.set_drop(nameString,Integer.valueOf(dropString));
+                            weights.add(weight);
+                            drops.add(Integer.valueOf(dropString));
+
                             classList.add(nameString);
                             count++;
                             break;
@@ -239,8 +245,8 @@ public class AddClassActivity extends FragmentActivity {
                                 dropString = "0";
                             }
 
-                            newClass.set_weight(nameString,weight);
-                            newClass.set_drop(nameString,Integer.valueOf(dropString));
+                            weights.add(weight);
+                            drops.add(Integer.valueOf(dropString));
                             classList.add(nameString);
                             count++;
                             break;
@@ -258,8 +264,8 @@ public class AddClassActivity extends FragmentActivity {
                                 dropString = "0";
                             }
 
-                            newClass.set_weight(nameString,weight);
-                            newClass.set_drop(nameString,Integer.valueOf(dropString));
+                            weights.add(weight);
+                            drops.add(Integer.valueOf(dropString));
                             classList.add(nameString);
                             count++;
                             break;
@@ -277,8 +283,8 @@ public class AddClassActivity extends FragmentActivity {
                                 dropString = "0";
                             }
 
-                            newClass.set_weight(nameString,weight);
-                            newClass.set_drop(nameString,Integer.valueOf(dropString));
+                            weights.add(weight);
+                            drops.add(Integer.valueOf(dropString));
                             classList.add(nameString);
                             count++;
                             break;
@@ -296,8 +302,8 @@ public class AddClassActivity extends FragmentActivity {
                                 dropString = "0";
                             }
 
-                            newClass.set_weight(nameString,weight);
-                            newClass.set_drop(nameString,Integer.valueOf(dropString));
+                            weights.add(weight);
+                            drops.add(Integer.valueOf(dropString));
                             classList.add(nameString);
                             count++;
                             break;
@@ -315,8 +321,8 @@ public class AddClassActivity extends FragmentActivity {
                                 dropString = "0";
                             }
 
-                            newClass.set_weight(nameString,weight);
-                            newClass.set_drop(nameString,Integer.valueOf(dropString));
+                            weights.add(weight);
+                            drops.add(Integer.valueOf(dropString));
                             classList.add(nameString);
                             count++;
                             break;
@@ -334,8 +340,8 @@ public class AddClassActivity extends FragmentActivity {
                                 dropString = "0";
                             }
 
-                            newClass.set_weight(nameString,weight);
-                            newClass.set_drop(nameString,Integer.valueOf(dropString));
+                            weights.add(weight);
+                            drops.add(Integer.valueOf(dropString));
                             classList.add(nameString);
                             count++;
                             break;
@@ -353,8 +359,8 @@ public class AddClassActivity extends FragmentActivity {
                                 dropString = "0";
                             }
 
-                            newClass.set_weight(nameString,weight);
-                            newClass.set_drop(nameString,Integer.valueOf(dropString));
+                            weights.add(weight);
+                            drops.add(Integer.valueOf(dropString));
                             classList.add(nameString);
                             count++;
                             break;
@@ -372,8 +378,8 @@ public class AddClassActivity extends FragmentActivity {
                                 dropString = "0";
                             }
 
-                            newClass.set_weight(nameString,weight);
-                            newClass.set_drop(nameString,Integer.valueOf(dropString));
+                            weights.add(weight);
+                            drops.add(Integer.valueOf(dropString));
                             classList.add(nameString);
                             count++;
                             break;
@@ -391,15 +397,15 @@ public class AddClassActivity extends FragmentActivity {
                                 dropString = "0";
                             }
 
-                            newClass.set_weight(nameString,weight);
-                            newClass.set_drop(nameString,Integer.valueOf(dropString));
+                            weights.add(weight);
+                            drops.add(Integer.valueOf(dropString));
                             classList.add(nameString);
                             count++;
                             break;
                     }
                 }
                 newClass.setAssignmentList(classList);
-                //FS_System.add_class(newClass); << something about this is making the system crash
+                FS_System.add_class(newClass); // something about this is making the system crash
                 //doesn't need to return to the home screen; needs to go to the class's home screen
                 Intent nextScreen = new Intent(v.getContext(), MainScreenActivity.class);
                 //passing the serializable object
